@@ -76,10 +76,10 @@ dataSource:
 environments:
     development:
         dataSource:
-            dbCreate: update
-            url: "jdbc:postgresql://46.41.138.32:5432/test_jsql_db"
-            username: "postgres"
-            password: "pgMjk6F#18P,5"
+            dbCreate: none
+            url: "jdbc:postgresql://172.32.1.31:5450/plugins_test?ssl=false"
+            username: "postgres_user2"
+            password: "5vfcbfdg345"
     test:
         dataSource:
             dbCreate: update

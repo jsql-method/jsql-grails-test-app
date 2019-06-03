@@ -3,12 +3,16 @@ package myapp
 class UrlMappings {
 
     static mappings = {
-        "/$controller/$action" {
-            constraints {}
+
+        "/$controller/$action?/$id?(.$format)?"{
+            constraints {
+                // apply constraints here
+            }
         }
 
-        "/"(controller: 'application', action:'index')
         "500"(view: '/error')
         "404"(view: '/notFound')
+
     }
+
 }

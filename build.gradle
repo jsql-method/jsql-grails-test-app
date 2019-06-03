@@ -24,17 +24,15 @@ apply plugin:"org.grails.grails-web"
 apply plugin:"org.grails.plugins.views-json"
 
 repositories {
-    flatDir {
-        dirs "$rootProject.projectDir/libs"
-    }
     mavenLocal()
     maven { url "https://repo.grails.org/grails/core" }
-    maven{
-        url "http://46.41.135.99:8081/artifactory/libs-release-local"
+    maven {
+        url "https://nexus.jsql.it/nexus/content/repositories/releases/"
     }
 }
 
 dependencies {
+
     compile "org.springframework.boot:spring-boot-starter-logging"
     compile "org.springframework.boot:spring-boot-autoconfigure"
     compile "org.grails:grails-core"
@@ -69,10 +67,11 @@ dependencies {
     testRuntime "org.seleniumhq.selenium:selenium-htmlunit-driver:2.47.1"
     testRuntime "net.sourceforge.htmlunit:htmlunit:2.18"
     compile group: 'log4j', name: 'log4j', version: '1.2.17'
-    compile(group: 'it.jsql.connector.grails', name: 'jsql-grails-plugin', version: '1.0.0')
 
+    compile 'jsql:grails-plugin:1.1.4'
 
-    runtime "org.postgresql:postgresql:9.4.1208.jre7"
+    compile group: 'org.postgresql', name: 'postgresql', version: '42.1.4'
+
 }
 
 bootRun {
