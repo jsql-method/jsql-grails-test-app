@@ -19,7 +19,7 @@ group "myapp"
 
 apply plugin:"eclipse"
 apply plugin:"idea"
-apply plugin:"war"
+//apply plugin:"war"
 apply plugin:"org.grails.grails-web"
 apply plugin:"org.grails.plugins.views-json"
 
@@ -72,6 +72,13 @@ dependencies {
 
     compile group: 'org.postgresql', name: 'postgresql', version: '42.1.4'
 
+}
+
+bootRepackage.classifier = 'bootable'
+bootRepackage.withJarTask = jar
+
+springBoot {
+    executable = true
 }
 
 bootRun {
