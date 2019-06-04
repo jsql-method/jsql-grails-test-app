@@ -13,7 +13,7 @@ stages:
   stage: build
   image: gradle:3.5-jdk
   script:
-  - gradle assembly
+  - gradle assemble
   artifacts:
     paths:
     - build/libs/*.jar
