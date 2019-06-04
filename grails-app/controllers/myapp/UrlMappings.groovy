@@ -10,6 +10,8 @@ class UrlMappings {
             }
         }
 
+        "/api/jsql/$action?"(controller: "jsql")
+
         "/"(controller: 'application', action:'index')
 
         "500"(view: '/error')
