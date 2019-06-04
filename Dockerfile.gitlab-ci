@@ -1,0 +1,9 @@
+FROM gradle:3.5-jdk as builder
+
+WORKDIR /home/gradle
+ADD --chown=gradle:gradle . /home/gradle
+RUN gradle assemble
+
+FROM openjdk:8u191-jre-alpine
+COPY --from=builder home/gradle/build/libs/gradle-0.1-bootable.jar /tmp/jsql-spring-boot-test-app.jar
+CMD java -jar /tmp/jsql-spring-boot-test-app.jar
